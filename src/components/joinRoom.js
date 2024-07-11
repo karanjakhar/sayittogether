@@ -1,7 +1,7 @@
 // JoinRoom.js
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebaseConfig';
-import { doc, getDoc, updateDoc, onSnapshot } from 'firebase/firestore';
+import { doc, updateDoc, onSnapshot } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 
 const JoinRoom = () => {
@@ -10,42 +10,38 @@ const JoinRoom = () => {
     const [selection, setSelection] = useState(null);
     const [reveal, setReveal] = useState(false);
     const [selections, setSelections] = useState({});
+    const [friends, setFriends] = useState([]);
     const [error, setError] = useState('');
 
     useEffect(() => {
         console.log('Room ID:', roomId);
         console.log('User ID:', userId);
 
-        const fetchRoomData = async () => {
-            try {
-                if (roomId) {
-                    const roomDocRef = doc(db, 'rooms', roomId);
-                    const roomDocSnap = await getDoc(roomDocRef);
+        const roomDocRef = doc(db, 'rooms', roomId);
 
-                    if (roomDocSnap.exists()) {
-                        const data = roomDocSnap.data();
-                        console.log('Room Data:', data);
+        const unsubscribe = onSnapshot(roomDocRef, (doc) => {
+            if (doc.exists()) {
+                const data = doc.data();
+                console.log('Room Data:', data);
 
-                        if (data && data.options) {
-                            setOptions(data.options);
-                        }
-                        if (data && data.selections) {
-                            setSelections(data.selections);
-                            const allSelected = Object.keys(data.selections).length === data.friends.length;
-                            setReveal(allSelected);
-                        }
-                    } else {
-                        console.error('No such document!');
-                        setError('No such room exists.');
-                    }
+                if (data && data.options) {
+                    setOptions(data.options);
                 }
-            } catch (err) {
-                console.error('Error fetching room data:', err);
-                setError('Failed to fetch room data.');
+                if (data && data.selections) {
+                    setSelections(data.selections);
+                    const allSelected = Object.keys(data.selections).length === data.friends.length;
+                    setReveal(allSelected);
+                }
+                if (data && data.friends) {
+                    setFriends(data.friends);
+                }
+            } else {
+                console.error('No such document!');
+                setError('No such room exists.');
             }
-        };
+        });
 
-        fetchRoomData();
+        return () => unsubscribe();
     }, [roomId]);
 
     const makeSelection = async (option) => {
@@ -56,6 +52,11 @@ const JoinRoom = () => {
                 [`selections.${userId}`]: option
             });
         }
+    };
+
+    const getFriendNameById = (id) => {
+        const friend = friends.find(friend => friend.id === id);
+        return friend ? friend.name : id;
     };
 
     return (
@@ -77,7 +78,7 @@ const JoinRoom = () => {
                     <h2>Selections Revealed</h2>
                     <ul>
                         {Object.keys(selections).map((id) => (
-                            <li key={id}>{id}: {selections[id]}</li>
+                            <li key={id}>{getFriendNameById(id)}: {selections[id]}</li>
                         ))}
                     </ul>
                 </div>

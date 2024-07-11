@@ -1,12 +1,12 @@
 // CreateRoom.js
 import React, { useState } from 'react';
 import { db } from '../firebaseConfig';
-import { collection, doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
 
 const CreateRoom = () => {
     const [options, setOptions] = useState(['']);
-    const [friends, setFriends] = useState(['']);
+    const [friends, setFriends] = useState([{ name: '', id: uuidv4() }]);
     const [roomId, setRoomId] = useState('');
     const [links, setLinks] = useState([]);
 
@@ -23,12 +23,12 @@ const CreateRoom = () => {
     };
 
     const handleAddFriend = () => {
-        setFriends([...friends, '']);
+        setFriends([...friends, { name: '', id: uuidv4() }]);
     };
 
     const handleFriendChange = (index, value) => {
         const newFriends = [...friends];
-        newFriends[index] = value;
+        newFriends[index].name = value;
         setFriends(newFriends);
     };
 
@@ -39,12 +39,12 @@ const CreateRoom = () => {
             roomId: id,
             options: options.filter(option => option.trim() !== ''),
             selections: {},
-            friends: friends.filter(friend => friend.trim() !== '')
+            friends: friends.filter(friend => friend.name.trim() !== '')
         };
         await setDoc(doc(db, 'rooms', id), roomData);
         const friendLinks = roomData.friends.map(friend => ({
             friend,
-            link: `${window.location.origin}/join/${id}/${uuidv4()}`
+            link: `${window.location.origin}/join/${id}/${friend.id}`
         }));
         setLinks(friendLinks);
     };
@@ -65,9 +65,9 @@ const CreateRoom = () => {
             <h2>Add Friends</h2>
             {friends.map((friend, index) => (
                 <input
-                    key={index}
+                    key={friend.id}
                     type="text"
-                    value={friend}
+                    value={friend.name}
                     onChange={(e) => handleFriendChange(index, e.target.value)}
                     placeholder={`Friend ${index + 1}`}
                 />
@@ -80,7 +80,7 @@ const CreateRoom = () => {
                     <h3>Share these links with your friends:</h3>
                     {links.map(({ friend, link }, index) => (
                         <div key={index}>
-                            <p>{friend}: <a href={link} target="_blank" rel="noopener noreferrer">{link}</a></p>
+                            <p>{friend.name}: <a href={link} target="_blank" rel="noopener noreferrer">{link}</a></p>
                         </div>
                     ))}
                 </div>
