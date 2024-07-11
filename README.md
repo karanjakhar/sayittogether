@@ -75,8 +75,6 @@ Create a room, share options, and make decisions with your friends in real-time.
   <img src="assets/screenshot_home_page.png" />
 </div>
 
-![Alt text](assets/mark_chris_elon.gif)
-
 
 
 ## Features
