@@ -1,70 +1,215 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <img src="assets/logo.jpeg" alt="logo" width="200" height="auto" />
+  <h1>Say it Together</h1>
+  
+  <p>
+    Make Decisions Together, Instantly!!
+  </p>
+  
+  
+<!-- Badges -->
+<p>
+  <a href="https://github.com/karanjakhar/sayittogether/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/karanjakhar/sayittogether" alt="contributors" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/karanjakhar/sayittogether" alt="last update" />
+  </a>
+  <a href="https://github.com/karanjakhar/sayittogether/network/members">
+    <img src="https://img.shields.io/github/forks/karanjakhar/sayittogether" alt="forks" />
+  </a>
+  <a href="https://github.com/karanjakhar/sayittogether/stargazers">
+    <img src="https://img.shields.io/github/stars/karanjakhar/sayittogether" alt="stars" />
+  </a>
+  <a href="https://github.com/karanjakhar/sayittogether/issues/">
+    <img src="https://img.shields.io/github/issues/karanjakhar/sayittogether" alt="open issues" />
+  </a>
+  <a href="https://github.com/karanjakhar/sayittogether/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/karanjakhar/sayittogether.svg" alt="license" />
+  </a>
+</p>
+   
+<h4>
+    <a href="https://github.com/karanjakhar/sayittogether/">View Demo</a>
+  <span> · </span>
+    <a href="https://github.com/karanjakhar/sayittogether">Documentation</a>
+  <span> · </span>
+    <a href="https://github.com/karanjakhar/sayittogether/issues/">Report Bug</a>
+  <span> · </span>
+    <a href="https://github.com/karanjakhar/sayittogether/issues/">Request Feature</a>
+  </h4>
+</div>
 
-## Available Scripts
+<br />
 
-In the project directory, you can run:
+<!-- Table of Contents -->
+# :notebook_with_decorative_cover: Table of Contents
 
-### `npm start`
+- [:notebook\_with\_decorative\_cover: Table of Contents](#notebook_with_decorative_cover-table-of-contents)
+  - [:star2: About the Project](#star2-about-the-project)
+    - [:camera: Screenshots](#camera-screenshots)
+  - [Features](#features)
+  - [How It Works](#how-it-works)
+    - [:space\_invader: Tech Stack](#space_invader-tech-stack)
+  - [:toolbox: Getting Started](#toolbox-getting-started)
+    - [:bangbang: Prerequisites](#bangbang-prerequisites)
+    - [Installation](#installation)
+  - [:eyes: Usage](#eyes-usage)
+  - [FAQ](#faq)
+  - [:wave: Contributing](#wave-contributing)
+    - [:scroll: Code of Conduct](#scroll-code-of-conduct)
+  - [:warning: License](#warning-license)
+  - [:handshake: Contact](#handshake-contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- About the Project -->
+## :star2: About the Project
+Create a room, share options, and make decisions with your friends in real-time. No more waiting—see everyone's choices once all selections are in. Easy, fast, and collaborative decision-making at your fingertips.
 
-### `npm test`
+<!-- Screenshots -->
+### :camera: Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div align="center"> 
+  <img src="assets/screenshot_home_page.png" />
+</div>
 
-### `npm run build`
+![Alt text](assets/mark_chris_elon.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+- **Real-Time Updates**: See results instantly without refreshing the page.
+- **Easy Sharing**: Share a unique link with your friends for easy access.
+- **Collaborative**: Make decisions together, no matter where you are.
+- **Simple Interface**: Intuitive design for a seamless experience.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## How It Works
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Create a Room**: Add up to five options for your friends to choose from.
+2. **Invite Friends**: Share the unique link with your friends.
+3. **Make Selections**: Each friend selects their option.
+4. **See Results**: Once all friends have made their selections, the results are revealed instantly.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- TechStack -->
+### :space_invader: Tech Stack
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+    <li><a href="https://firebase.google.com/">Firebase</a></li>
+  </ul>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+<!-- Getting Started -->
+## 	:toolbox: Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- Prerequisites -->
+### :bangbang: Prerequisites
 
-### Analyzing the Bundle Size
+<ul>
+    <li><a href="https://nodejs.org/en/download/package-manager">npm</a></li>
+    <li><a href="https://firebase.google.com/">Firebase account</a></li>
+  </ul>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Installation
 
-### Advanced Configuration
+1. Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```sh
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+```
 
-### Deployment
+2. Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```sh
+npm install
+```
 
-### `npm run build` fails to minify
+3. Set up Firebase:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
+- Copy the Firebase configuration and replace the placeholder in `src/firebaseConfig.js`.
+
+```js
+// src/firebaseConfig.js
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+```
+
+4. Start the development server:
+
+```sh
+npm start
+```
+
+<!-- Usage -->
+## :eyes: Usage
+
+
+1. **Create a Room**: Visit the home page and add options for your friends to choose from.
+2. **Invite Friends**: Share the unique link with your friends.
+3. **Make Selections**: Each friend can make their selection.
+4. **See Results**: Results are revealed instantly once all friends have made their selections.
+
+
+## FAQ
+
+**How many options can I add?**
+You can add up to five options per room.
+
+**How do I share the room with my friends?**
+After creating a room, you'll receive a unique link. Share this link with your friends to invite them to make their selections.
+
+**Do I need to refresh the page to see the results?**
+No, our platform updates in real-time. Once all friends have made their selections, the results will be revealed automatically.
+
+**Is there a limit to the number of friends I can invite?**
+No, you can invite as many friends as you like by sharing the unique link with them.
+
+
+<!-- Contributing -->
+## :wave: Contributing
+
+<a href="https://github.com/karanjakhar/sayittogether/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=karanjakhar/sayittogether" />
+</a>
+
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+
+<!-- Code of Conduct -->
+### :scroll: Code of Conduct
+
+Please read the [Code of Conduct](https://github.com/karanjakhar/sayittogether/blob/master/CODE_OF_CONDUCT.md)
+
+
+<!-- License -->
+## :warning: License
+
+Distributed under Apache2.0. See LICENSE for more information.
+
+
+<!-- Contact -->
+## :handshake: Contact
+
+Karan Jakhar - [@karan-jakhar](https://www.linkedin.com/in/karan-jakhar/) - karanjakhar49@gmail.com
+
+Project Link: [https://github.com/karanjakhar/sayittogether](https://github.com/karanjakhar/sayittogether)
+
