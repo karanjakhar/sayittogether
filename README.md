@@ -123,7 +123,7 @@ Create a room, share options, and make decisions with your friends in real-time.
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/karanjakhar/sayittogether.git
 cd your-repo-name
 ```
 
